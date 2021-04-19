@@ -1,0 +1,15 @@
+.title
+        {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font: italic;
+            
+        }
+body
+        {
+                background-color: wheat;
+        }
+.log    
+        {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color:black;
+        }
