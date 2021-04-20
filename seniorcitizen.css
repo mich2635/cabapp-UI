@@ -1,0 +1,12 @@
+body{
+    align-items: center;
+    scrollbar-base-color: aqua;
+    scroll-behavior: smooth;
+    }
+.senior{
+    margin-left: 23%;
+    border: 12px solid rgb(255, 187, 0);
+    width: 50%;
+    border-radius:12px;
+    background-color :rgb(225, 245, 137);
+}
