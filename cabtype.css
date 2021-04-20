@@ -1,0 +1,33 @@
+a:hover
+    {
+        background-color:yellow;
+        padding: 0%;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        border-radius: 12px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+    a:link {
+        color: green;
+      }
+      a:visited {
+        color:violet;
+      }
+      a:hover {
+        color: red;
+      }
+      a:active {
+        color: yellow;
+      }
+body
+      {
+        background-image: url(https://images.unsplash.com/photo-1490650404312-a2175773bbf5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+table{
+  opacity: 75%;
+}
