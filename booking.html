@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="booking.css">
+</head>
+<center><h1>BOOKING</h1></center>
+<body>
+	<div class="lol1">
+<form align="center" onsubmit="booking()">
+	<label>	JOURNEY DATE</label><br>
+	<input type="date" name="journeydate" min="2021-04-19" max="2021-04-29" id="date" required class="decorate"/><br>
+	<label>TIMINGS</label><br>
+	<input type="time" name="journeytime"id="time" required class="decorate"/><br>
+	<h1>GST AMOUNT</h1>
+	<input type="text" value="7%" readonly class="decorate"><br><br>
+	GENDER: <input type="radio" value="M" id="gender" required class="decorate">MALE
+	<input type="radio" value="F" id="gender" required class="decorate">FEMALE<br><br>
+	<input type="submit" value="SUBMIT" class="decorate">
+</form>
+</div>
+<br>
+</body> 
+<script>
+	function booking()
+	{
+		event.preventDefault();
+		let costS=window.location.search.substr(6);
+		let cost=parseInt(costS);
+		let timee=document.querySelector("#time").value;
+		let timeStr=timee.substr(0,2);
+		let time=parseInt(timeStr);
+				if(time>=17 && time<=19)
+				{
+					let amount1=(cost*0.0125)+cost;
+					let gst=(amount1*0.07)+amount1;
+					let amount=gst/2;
+					alert("ITS PEAK HOUR ,SO YOUR TOTAL COST INCLUDONG PEAK HOUR CHARGE : "+amount);
+					window.location.href="seniorcitizen.html?amount="+amount;
+				}
+				if(time<=16 ||time>=20)
+				{
+					amount=(cost*0.07)+cost;
+					amount1=amount/2;
+					alert("ITS NOT PEAK HOUR ,SO YOUR TOTAL COST:   "+amount1);
+					window.location.href="seniorcitizen.html?amount="+amount1;
+				}
+	
+	}
+	
+</script>
+</html>

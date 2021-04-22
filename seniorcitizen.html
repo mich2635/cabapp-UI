@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="seniorcitizen.css">
+    <title>Document</title>
+</head>
+<body align="center" bgcolor="wheat">
+    <div class="senior">
+    <br>
+    <form onsubmit="seniorcitizen()">
+    <h1>ENTER THE DATE OF BIRTH</h1>
+    <input type="date" id="dob" required class="decorate"><br><br>
+    <input type="submit" value="GET BILL" class="decorate"><br>
+    
+            <h3>YOUR TOTAL BILL AMOUNT</h1>
+            <input type="number" id="bill" readonly class="decorate">
+            <h3>GST PERCENTAGE</h1>
+            <input type="text" id="ag" readonly class="decorate"><br>
+            <h1>YOUR CAB IS SUCCESSFULLY BOOKED</h1><br>
+            <h1>HAPPY JOURNEY@@@</h1>
+
+                
+
+    <table align="center"border="20">
+        <tr>
+             <th><h3><a href="login.html"> -----EXIT----</a></h3></th>
+         <th><h3><a href="selectcab.html">----BOOK AGAIN---</a></h3></th>
+      
+         <tr>
+     </table>
+</body>
+<script>
+    function seniorcitizen()
+    {
+    event.preventDefault();
+    let amountt=window.location.search.substr(8);
+    let amount=parseFloat(amountt);
+    let dobirth=document.querySelector("#dob").value;
+    let yob=dobirth.substr(0,4);
+    let date=new Date();
+    let year=date.getFullYear();
+    let age=year-yob;
+    if(age>=60)
+    {
+        let cost=amount/2;
+        alert("50% OFFER FOR SENIOR CITIZEN!!! YOUR TOTAL COST:   "+cost);
+        document.querySelector("#bill").value=cost;
+        document.querySelector("#ag").value = "7%";
+    }
+    else
+    {
+        alert("TOTAL COST:  "+amount);
+        document.querySelector("#bill").value= amount ;
+        document.querySelector("#ag").value="7%";
+    }
+    }
+</script>
+</html>
