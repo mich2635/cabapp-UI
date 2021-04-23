@@ -24,41 +24,41 @@
 </body> 
 <script>
 	
-	function onload(){
+	function onload(){													//This functions sets minimum date and maximum date
 		let today=new Date();
 		let todayStr =today.toJSON().substring(0,10);
 		let endDate=new Date();
 		endDate.setDate(endDate.getDate()+5);
 		let endDateStr=endDate.toJSON().substring(0,10);
-		document.querySelector("#date").setAttribute("value",todayStr);
-		document.querySelector("#date").setAttribute("min",todayStr);
-		document.querySelector("#date").setAttribute("max",endDateStr);
+		document.querySelector("#date").setAttribute("value",todayStr);//value is todayStr
+		document.querySelector("#date").setAttribute("min",todayStr);  //min is todayStr
+		document.querySelector("#date").setAttribute("max",endDateStr);//max is endDatestr
 	}
 	onload();
 	
-	function booking()
+	function booking()												//This function calculates cost according to peakhour or not
 	{
 		event.preventDefault();
-		let costS=window.location.search.substr(6);
+		let costS=window.location.search.substr(6);					//recieving attrbutes from cabtypes.html
 		let cost=parseInt(costS);
 		let timee=document.querySelector("#time").value;
 		let timeStr=timee.substr(0,2);
 		let time=parseInt(timeStr);
 	
-				if(time>=17 && time<=19)
+				if(time>=17 && time<=19)							//if peak hours
 				{
 					let amount1=(cost*0.0125)+cost;
 					let gst=(amount1*0.07)+amount1;
 					let amount=gst/2;
 					alert("ITS PEAK HOUR ,SO YOUR TOTAL COST INCLUDONG PEAK HOUR CHARGE : "+amount);
-					window.location.href="seniorcitizen.html?amount="+amount;
+					window.location.href="seniorcitizen.html?amount="+amount;		//sending amount to seniorcitizen.html
 				}
-				if(time<=16 ||time>=20)
+				if(time<=16 ||time>=20)								//if not peak hours
 				{
 					amount=(cost*0.07)+cost;
 					amount1=amount/2;
 					alert("ITS NOT PEAK HOUR ,SO YOUR TOTAL COST:   "+amount1);
-					window.location.href="seniorcitizen.html?amount="+amount1;
+					window.location.href="seniorcitizen.html?amount="+amount1;			//sending amount to seniorcitizen.html
 				}
 	
 	}

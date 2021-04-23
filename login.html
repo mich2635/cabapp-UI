@@ -32,18 +32,18 @@
 	</div>
 </body>
 <script>
-	function login()
+	function login()														//This function chrecks the username and password
 	{
 		event.preventDefault();
 		let username=document.querySelector("#mobileno").value;
 		let password=document.querySelector("#password").value;
-		if(username=="8870907039" && username.length==10 &&password==1234)
+		if(username=="8870907039" && username.length==10 &&password==1234)	//username and password verification
 		{
 			alert("LOG IN SUCCESSFULL");
-			window.location.href="cabtype.html";
+			window.location.href="cabtype.html";							//correct details
 		}
 		else{
-			alert("INVALID LOG IN!!!");
+			alert("INVALID LOG IN!!!");										//wrong details
 		}
 	}
 </script>

@@ -44,27 +44,27 @@
 
 </body>
 <script>
-	function cabtype1(){
+	function cabtype1(){												//This function calculates cost according to the selected cac
 	event.preventDefault();
 	let cab=document.querySelector("#cabtypes").value;
 	let km=document.querySelector("#kmeter").value;
 	let cost;
 		switch(cab)
 		{
-			case "MICRO":
+			case "MICRO":												//if cab is mico
 				cost=km*10;
 				alert("COST: "+cost);
-				window.location.href="booking.html?cost="+cost;
+				window.location.href="booking.html?cost="+cost;			//sending cost to booking.html
 				break;
-			case "MINI":
+			case "MINI":												//if cab is mini
 				cost=km*15;
 				alert("COST: "+cost);
-				window.location.href="booking.html?cost="+cost;
+				window.location.href="booking.html?cost="+cost;			//sending cost to booking.html
 				break;
-			case "PRIME":
+			case "PRIME":												//if cab is prime
 				cost=km*20;
 				alert("COST: "+cost);
-				window.location.href="booking.html?cost="+cost;
+				window.location.href="booking.html?cost="+cost;			//sending cost ot booking.html
 				break;
 
 		}

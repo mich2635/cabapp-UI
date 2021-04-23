@@ -36,17 +36,17 @@
      </table>
 </body>
 <script>
-    function seniorcitizen()
+    function seniorcitizen()                            //This function calculate total bill according to senior citizen or not
     {
     event.preventDefault();
-    let amountt=window.location.search.substr(8);
+    let amountt=window.location.search.substr(8);       //recieving amount from booking.html
     let amount=parseFloat(amountt);
     let dobirth=document.querySelector("#dob").value;
     let yob=dobirth.substr(0,4);
     let date=new Date();
     let year=date.getFullYear();
     let age=year-yob;
-    if(age>=60)
+    if(age>=60)                                                                 //if senior citizen 50% cost
     {
         let cost=amount/2;
         alert("50% OFFER FOR SENIOR CITIZEN!!! YOUR TOTAL COST:   "+cost);
@@ -54,7 +54,7 @@
         document.querySelector("#ag").value = "7%";
         document.querySelector("#rad").value= "yes!....Enjoy 50% dicount";
     }
-    else
+    else                                                                           //not senior citizen
     {
         alert("TOTAL COST:  "+amount);
         document.querySelector("#bill").value= amount ;
