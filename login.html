@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+		<video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+				<source src="https://freefrontend.com/assets/img/css-animated-backgrounds/cool-mountain-background-with-animations-slightly-responsive.mp4" type="video/webm">
+			  </video>
+	<div class="log">
+	<center>
+		<h1>LOG IN PAGE</h1>
+	</center>
+	<form align="center" onsubmit="login()">
+			<div>
+			<label for="mobileno">ENTER MOBILE NO</label><br>
+			<input type="text" name="mobileno" id="mobileno" required class="bttn"><br><br>
+			</div>
+			<div>
+			 <label	for="college Name">ENTER PASSWORD</label><br>
+			 <input type="password" name=" password" id="password" required class="bttn"/><br><br>
+			</div>
+			<div>
+			 <input type="submit" value="SUBMIT" autofocus class="bttn">
+			</div>
+	</form>
+	</div>
+	<div class="pro">
+		<h3>help center:<a href="https://support.google.com/sites/?hl=en#topic=7184580">click here</a></h3>
+	</div>
+</body>
+<script>
+	function login()
+	{
+		event.preventDefault();
+		let username=document.querySelector("#mobileno").value;
+		let password=document.querySelector("#password").value;
+		if(username=="8870907039" && username.length==10 &&password==1234)
+		{
+			alert("LOG IN SUCCESSFULL");
+			window.location.href="cabtype.html";
+		}
+		else{
+			alert("INVALID LOG IN!!!");
+		}
+	}
+</script>
+</html>

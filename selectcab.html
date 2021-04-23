@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="selectcab.css">
+</head>
+
+<body>
+	<center>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	<center><label>
+			<h1>SELECT CABS</h1>
+		</label></center>
+		<div class="king">
+			<form onsubmit="cabtype1()">
+				<strong>
+					<h3>CAB TYPE</h3>
+				</strong>
+				<select id="cabtypes" class="decorate">
+					<option disabled>SELECT CAR TYPES</option>
+					<option id="cabtypes" value="MICRO">MICRO</option>
+					<option id="cabtypes" value="MINI">MINI</option>
+					<option id="cabtypes" value="PRIME">PRIME</option>
+				</select>
+				<br>
+				<strong>
+					<label>
+						<h3>ENTER THE KMS</h3>
+					</label>
+				</strong>
+				<input type="number" id="kmeter" min=1 max=1000 required class="decorate">
+				<br>
+				<br>
+				<input type="submit" value="SUBMIT" autofocus class="decorate">
+			</form>
+		</div>
+
+</body>
+<script>
+	function cabtype1(){
+	event.preventDefault();
+	let cab=document.querySelector("#cabtypes").value;
+	let km=document.querySelector("#kmeter").value;
+	let cost;
+		switch(cab)
+		{
+			case "MICRO":
+				cost=km*10;
+				alert("COST: "+cost);
+				window.location.href="booking.html?cost="+cost;
+				break;
+			case "MINI":
+				cost=km*15;
+				alert("COST: "+cost);
+				window.location.href="booking.html?cost="+cost;
+				break;
+			case "PRIME":
+				cost=km*20;
+				alert("COST: "+cost);
+				window.location.href="booking.html?cost="+cost;
+				break;
+
+		}
+	}
+</script>
+
+</html>
