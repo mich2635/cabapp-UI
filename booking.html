@@ -15,8 +15,8 @@
 	<input type="time"id="time" required class="decorate"/><br>
 	<h1>GST AMOUNT</h1> 
 	<input type="text" value="7%" readonly class="decorate"><br><br>
-	GENDER: <input type="radio" value="M" id="gender" required class="decorate">MALE
-	<input type="radio" value="F" id="gender" required class="decorate">FEMALE<br><br>
+	GENDER: <input type="radio"  id="gender" class="decorate" required>MALE
+	<input type="radio" id="gender" class="decorate" required>FEMALE<br><br>
 	<input type="submit" value="SUBMIT" class="decorate">
 </form>
 </div>
@@ -33,6 +33,23 @@
 		document.querySelector("#date").setAttribute("value",todayStr);//value is todayStr
 		document.querySelector("#date").setAttribute("min",todayStr);  //min is todayStr
 		document.querySelector("#date").setAttribute("max",endDateStr);//max is endDatestr
+		let hours=today.getHours().toString();
+		let minutes=today.getMinutes().toString();
+		let middle=":";
+		let time2=hours.concat(middle);
+		let time3=time2.concat(minutes);
+		document.querySelector("#time").setAttribute("value",time3);
+		/*let nowD=new date().toString().substr(0,10)
+		let verf=document.querySelector("#date").value;
+		let verff=verf.toString();
+		if(nowD!=verff)
+		{
+		document.querySelector("#time").setAttribute("min",time3);
+		document.querySelector("#time").setAttribute("value",time3);
+		}
+		else{
+			document.querySelector("#time").setAttribute("value",time3);
+		}*/
 	}
 	onload();
 	
@@ -44,7 +61,6 @@
 		let timee=document.querySelector("#time").value;
 		let timeStr=timee.substr(0,2);
 		let time=parseInt(timeStr);
-	
 				if(time>=17 && time<=19)							//if peak hours
 				{
 					let amount1=(cost*0.0125)+cost;
